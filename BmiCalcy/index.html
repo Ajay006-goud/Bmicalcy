@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		BmiCalcy
+	</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+	body
+	{
+		background-image:url('1.jpg');
+		background-size: cover;	
+	}
+</style>
+
+</head>
+<body>
+<div class="container">
+	<div class="card">
+		<div class="card-header text-center bg-danger">BMI Caculator</div>
+		<div class="card-body">
+			<form class="w-50 m-auto" onsubmit= "return false">
+				<div class="form-group">
+					<label>Weight:</label>
+					<input type="text" name=""  placeholder="Weight in kg" required  id="weight" class="form-control">
+				</div>
+
+				<div class="form-group">
+					<label>Height:</label>
+					<input type="text" name="" id="height" placeholder="Height in ft" required  class="form-control">
+				</div>
+
+				<div class="form-group">
+					<label>BMIvlaue:</label>
+					<input type="number" name="" id="bmivalue" class="form-control">
+				</div>
+
+
+				<div>
+					<button typr="submit" class="btn btn-success" onclick="getbmivalue()">Check BMI</button>
+				</div>
+			</form>
+		</div>
+		<div class="card-footer text-center"> A healthy BMI ranges between 19 and 25.</div>
+	</div>
+</div>
+
+
+<script>
+	
+	function getbmivalue() 
+	{
+	var weight=document.getElementById('weight').value;
+	var height=document.getElementById('height').value;
+	
+	height=height*12;
+	height=height*0.025;
+
+    var newbmivalue = weight/(height*height);
+    newbmivalue= Math.round(newbmivalue);
+    document.getElementById('bmivalue').value= newbmivalue;
+	}
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
